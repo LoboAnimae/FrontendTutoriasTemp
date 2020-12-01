@@ -8,7 +8,6 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     detailsContainer: {
-        marginTop: '10%',
         flex: 1,
         justifyContent: 'flex-start',
         alignItems: 'flex-start'
@@ -26,7 +25,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
     },
     middleContainer: {
-        flex: 3,
+        flex: 1,
         width: '100%',
         marginTop: '50%'
     },
