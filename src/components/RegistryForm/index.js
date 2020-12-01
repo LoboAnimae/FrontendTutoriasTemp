@@ -58,9 +58,15 @@ const validate = (values) => {
     errors.username = 'Requerido'
   }
 
-  if (!values.age || !Number.isInteger(values.age)) {
-    errors.age = 'Requerido'
+  if (!values.age) {
+    errors.age = 'Requerida'
   }
+
+
+  if (values.age && !/^\d+$/.test(values.age)){
+    errors.age = 'Solo se aceptan dígitos'
+  }
+
 
   if (!values.email) {
     errors.email = 'Requerido'
