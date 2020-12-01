@@ -99,20 +99,38 @@ const RegistryForm = (props) => {
 
   if (success) {
     return (
-      <View style={styles.successMessage}>
-        <AntDesign
-          name="checkcircle"
-          size={64}
-          color={'#428AF8'}
-          style={{ marginBottom: 64 }}
-        />
-        <Text>Cuenta creada con exito</Text>
-        <Link to="/">
-          <Text style={{ color: '#078b45' }}>
-            Haz clic aquí para iniciar sesión
-          </Text>
-        </Link>
-      </View>
+        <SafeAreaView style={{
+          paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
+          flex: 1,
+        }}>
+          <View style={{
+            flex: 1,
+          }}>
+            <View style={{
+              flex: 1
+            }}/>
+            <View style={{flex:1, flexDirection: 'row'}}>
+              <View style={{flex: 1}}/>
+              <View style={{alignItems: 'center', flex: 3}}>
+                <AntDesign
+                    name="checkcircle"
+                    size={128}
+                    color={ '#078B45' }
+                    style={{marginBottom: 64}}
+                />
+                <Text>¡Cuenta creada con éxito!</Text>
+                <Link to="/">
+                  <Text style={{color: '#078B45' }}>
+                    Haz click aquí para iniciar sesión.
+                  </Text>
+                </Link>
+              </View>
+              <View style={{flex: 1}}/>
+
+            </View>
+            <View style={{flex: 1}}/>
+          </View>
+        </SafeAreaView>
     )
   }
 
@@ -290,6 +308,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#078B45',
   },
 })
+
 export default reduxForm({
   form: 'signUp',
   validate,
