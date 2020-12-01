@@ -1,11 +1,11 @@
 import {Platform, StatusBar, StyleSheet} from 'react-native';
+import cafeteria from "../../assets/cafeteria.jpg";
 
 // Tutor/user styles
 const styles = StyleSheet.create({
     mainContainer: {
         paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
         flex: 1,
-        backgroundColor: '#000'
     },
     detailsContainer: {
         marginTop: '10%',

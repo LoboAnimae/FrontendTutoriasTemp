@@ -7,7 +7,7 @@ import styles from './styles';
 import * as selectors from '../../reducers';
 import * as authorActions from '../../actions/authors';
 import {SafeAreaView} from "react-navigation";
-import cafeteria from "../../assets/cafeteria.jpg";
+import cit from "../../assets/CIT.jpg";
 
 
 // Pantalla donde se muestran los detalles del autor.
@@ -17,12 +17,13 @@ const AuthorDetails = ({ selectedAuthor, authorBooks, onLoad, navigation }) => {
 
     return(
         <SafeAreaView style={styles.mainContainer}>
+            <ImageBackground
+                source={cit}
+                blurRadius={3}
+                style={{ flex: 1, justifyContent: 'center' }}
+            >
                 <View style={styles.detailsContainer}>
-                    <ImageBackground
-                        source={cafeteria}
-                        blurRadius={7}
-                        style={{ flex: 1, justifyContent: 'center' }}
-                    >
+
                         <View style={{flex: 1}}/>
                         {/*<View style={styles.topContainer}>*/}
 
@@ -46,9 +47,9 @@ const AuthorDetails = ({ selectedAuthor, authorBooks, onLoad, navigation }) => {
                         {/*            /!*<WeekScheduler/>*!/*/}
                         {/*        </View>*/}
                         {/*</View>*/}
-                    </ImageBackground>
-                </View>
 
+                </View>
+            </ImageBackground>
 
                 {/*<View style={styles.middleContainer}>*/}
                 {/*    <Text style={styles.header}>Books by the Author</Text>*/}
