@@ -24,29 +24,28 @@ const AuthorDetails = ({ selectedAuthor, authorBooks, onLoad, navigation }) => {
             >
                 <View style={styles.detailsContainer}>
 
-                        <View style={{flex: 1}}/>
-                        {/*<View style={styles.topContainer}>*/}
+                    <View style={styles.topContainer}>
 
-                        {/*        <Image source={require('../../assets/default_pp.png')} style={styles.authorPic}/>*/}
+                            <Image source={require('../../assets/default_pp.png')} style={styles.authorPic}/>
 
-                        {/*        <View style={styles.authorInfo}>*/}
-                        {/*            <Text style={styles.name}>{selectedAuthor ? selectedAuthor.name : ''}</Text>*/}
-                        {/*            <Text style={styles.name}>{selectedAuthor ? selectedAuthor.lastname : ''}</Text>*/}
-                        {/*        </View>*/}
-                        {/*        <View style={styles.middleContainer}>*/}
-                        {/*            {*/}
-                        {/*                selectedAuthor.type === 'tutor' ?*/}
-                        {/*                    <Text>*/}
-                        {/*                        Usted es tutor*/}
-                        {/*                    </Text>:*/}
-                        {/*                    <Text>*/}
-                        {/*                        No tiene tutorías asignadas, favor dirigirse a la autoridad correspondiente para solicitarlas*/}
-                        {/*                    </Text>*/}
+                            <View style={styles.authorInfo}>
+                                <Text style={styles.name}>{selectedAuthor ? selectedAuthor.name : ''}</Text>
+                                <Text style={styles.name}>{selectedAuthor ? selectedAuthor.lastname : ''}</Text>
+                            </View>
+                            <View style={styles.middleContainer}>
+                                {
+                                    selectedAuthor.type === 'tutor' ?
+                                        <Text>
+                                            Usted es tutor
+                                        </Text>:
+                                        <Text>
+                                            No tiene tutorías asignadas, favor dirigirse a la autoridad correspondiente para solicitarlas
+                                        </Text>
 
-                        {/*            }*/}
-                        {/*            /!*<WeekScheduler/>*!/*/}
-                        {/*        </View>*/}
-                        {/*</View>*/}
+                                }
+                                {/*<WeekScheduler/>*/}
+                            </View>
+                    </View>
 
                 </View>
             </ImageBackground>
