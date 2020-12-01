@@ -1,14 +1,22 @@
-import { StyleSheet } from 'react-native';
+import {Platform, StatusBar, StyleSheet} from 'react-native';
 
-// Estilos para la página de autor
+// Tutor/user styles
 const styles = StyleSheet.create({
+    mainContainer: {
+        paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
+        flex: 1,
+        backgroundColor: '#000'
+    },
     detailsContainer: {
         marginTop: '10%',
         flex: 1,
         justifyContent: 'flex-start',
-        alignItems: 'flex-start',
-        backgroundColor: '#FFFFFF'
+        alignItems: 'flex-start'
     },
+    mainProgram: {
+        flex: 1
+    },
+
     topContainer: {
         flex: 1,
         justifyContent: 'flex-start',

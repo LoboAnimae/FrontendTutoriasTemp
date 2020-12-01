@@ -58,8 +58,10 @@ const validate = (values) => {
     errors.username = 'Requerido'
   }
 
-  if (!values.age || !Number.isInteger(values.age)) {
-    errors.age = 'Requerido'
+  if (!values.age) {
+    errors.age = 'Requerida'
+  } else if (!Number.isInteger(parseInt(values.age))) {
+    errors.age = 'Edad no válida'
   }
 
   if (!values.email) {
