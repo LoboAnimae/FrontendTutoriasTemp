@@ -17,6 +17,7 @@ import {
 } from 'react-native'
 import { Link } from 'react-router-native'
 import { AntDesign } from '@expo/vector-icons'
+import SuccessScreen from "../SuccessScreen";
 
 import Button from '../Button'
 import FormTextInput from '../FormTextInput'
@@ -102,40 +103,13 @@ const RegistryForm = (props) => {
   } = props
 
   if (success) {
-    return (
-        <SafeAreaView style={{
-          paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
-          flex: 1,
-        }}>
-          <View style={{
-            flex: 1,
-          }}>
-            <View style={{
-              flex: 1
-            }}/>
-            <View style={{flex:1, flexDirection: 'row'}}>
-              <View style={{flex: 1}}/>
-              <View style={{alignItems: 'center', flex: 3}}>
-                <AntDesign
-                    name="checkcircle"
-                    size={128}
-                    color={ '#078B45' }
-                    style={{marginBottom: 64}}
-                />
-                <Text>¡Cuenta creada con éxito!</Text>
-                <Link to="/">
-                  <Text style={{color: '#078B45' }}>
-                    Haz click aquí para iniciar sesión.
-                  </Text>
-                </Link>
-              </View>
-              <View style={{flex: 1}}/>
-
-            </View>
-            <View style={{flex: 1}}/>
-          </View>
-        </SafeAreaView>
-    )
+    return SuccessScreen(
+        'checkcircle',
+        125,
+        '#078B45',
+        '¡Cuenta creada con éxito!',
+        '/',
+        'Haz click aquí para iniciar sesión.')
   }
 
   if (addingError !== null) {
